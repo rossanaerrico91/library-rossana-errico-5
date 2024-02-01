@@ -1,0 +1,51 @@
+includes:
+    - ./vendor/larastan/larastan/extension.neon
+
+parameters:
+
+    level: 5
+
+    paths:
+        - ./app
+
+    ignoreErrors:
+        - '#Unsafe usage of new static#'
+        - '#PHPDoc tag @mixin contains unknown class #'
+        - '#Static call to instance method Nwidart#'
+
+    excludePaths:
+        - ./*/vendor/*
+        - ./*/Tests/*
+        - ./*/build/*
+        - ./*/docs/*
+        - ./*/docs_old/*
+        - ./*/Main_files/*
+        - ./Modules/Test/*
+        #- ./Modules/Media/*
+        - ./Modules/Comment/*
+        - ./Modules/Xot/Services/Trend.php
+        - ./Modules/Wire/View/Components/Spotlight/*
+        - ./Modules/Wire/View/Components/Insert/*
+        - ./Modules/Wire/*
+        - ./Modules/Limesurvey/*
+        - ./packages/artmin96/filament-jet/tests/*
+        - ./Modules/User/Filament/Resources/RoleResource.php
+        - ./Modules/Notify/Notifications/Channels/FirebaseCloudMessagingChannel.php
+        - ./Modules/Forum/*
+        #- ./Modules/Ticket/*
+        - ./Modules/BarberShop/*
+        - ./Modules/Booking/*
+        - ./Modules/Cms/*
+
+
+    editorUrl: 'vscode://file/%%file%%:%%line%%'
+
+    tmpDir: ./build/phpstan
+
+    checkUnusedViews: false
+    checkModelProperties: false
+    checkMissingIterableValueType: false
+    checkGenericClassInNonGenericObjectType: false
+    treatPhpDocTypesAsCertain: false
+    reportUnmatchedIgnoredErrors: false
+    checkOctaneCompatibility: false
